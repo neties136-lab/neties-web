@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agen Prudential & COWAY — Perlindungan & Hidup Sehat Keluarga Anda</title>
+<meta name="description" content="Agen Prudential & COWAY. Konsultasi asuransi jiwa & kesehatan Prudential, serta penyaring air, penyaring udara, bidet, dan kasur COWAY. Konsultasi gratis via WhatsApp.">
+<link rel="icon" type="image/jpeg" href="neties-logo.jpg">
+<script src="config.js"></script>
+<style>
+  /* ============ RESET & TOKENS ============ */
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --red:#C8102E;         /* Prudential red */
+    --red-dark:#8E0B20;
+    --blue:#00A9CE;        /* Coway blue */
+    --teal:#00B8A9;        /* Coway teal */
+    --navy:#111D33;
+    --navy-2:#1B2A4A;
+    --ink:#1F2430;
+    --muted:#5B6474;
+    --line:#E7EAF0;
+    --bg:#F6F8FB;
+    --white:#fff;
+    --gold:#E8B54B;
+    --shadow:0 10px 30px rgba(17,29,51,.10);
+    --shadow-lg:0 20px 50px rgba(17,29,51,.16);
+    --radius:18px;
+    --font:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+  img{max-width:100%}
+  a{text-decoration:none;color:inherit}
+  .container{max-width:1140px;margin:0 auto;padding:0 22px}
+  section{padding:84px 0}
+  .eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border-radius:999px;background:rgba(0,169,206,.12);color:#007793;margin-bottom:14px}
+  .eyebrow.red{background:rgba(200,16,46,.1);color:var(--red)}
+  h1,h2,h3{line-height:1.2;color:var(--navy)}
+  .section-title{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:14px}
+  .section-sub{color:var(--muted);max-width:620px;font-size:1.05rem}
+  .center{text-align:center}
+  .center .section-sub{margin:0 auto}
+
+  /* ============ NAVBAR ============ */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.3s}
+  header.scrolled{background:rgba(255,255,255,.94);backdrop-filter:blur(12px);box-shadow:0 4px 24px rgba(17,29,51,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.05rem;color:var(--navy)}
+  .brand .logo{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--red) 0%,var(--red) 50%,var(--blue) 50%,var(--teal) 100%);color:#fff;box-shadow:var(--shadow);overflow:hidden}
+  .logo img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}
+  .brand small{display:block;font-size:.66rem;font-weight:600;letter-spacing:.08em;color:var(--muted)}
+  header:not(.scrolled) .brand,header:not(.scrolled) .nav-links a{color:#fff}
+  header:not(.scrolled) .brand small{color:rgba(255,255,255,.7)}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-size:.92rem;font-weight:600;transition:.2s;opacity:.92}
+  .nav-links a:hover{color:var(--teal)!important;opacity:1}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.95rem;padding:13px 26px;border-radius:999px;transition:.25s;border:0;cursor:pointer}
+  .btn-wa{background:#25D366;color:#fff;box-shadow:0 8px 22px rgba(37,211,102,.35)}
+  .btn-wa:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(37,211,102,.45)}
+  .btn-red{background:var(--red);color:#fff;box-shadow:0 8px 22px rgba(200,16,46,.35)}
+  .btn-red:hover{transform:translateY(-2px);background:var(--red-dark)}
+  .btn-blue{background:var(--blue);color:#fff;box-shadow:0 8px 22px rgba(0,169,206,.35)}
+  .btn-blue:hover{transform:translateY(-2px);background:#0086A8}
+  .btn-ghost{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+  .btn-ghost:hover{background:rgba(255,255,255,.25)}
+  .btn svg{width:18px;height:18px;flex:none}
+  .nav-cta{display:inline-flex}
+  .hamburger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .hamburger span{display:block;width:24px;height:2.5px;background:#fff;border-radius:2px;margin:5px 0;transition:.3s}
+  header.scrolled .hamburger span{background:var(--navy)}
+
+  /* ============ HERO ============ */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden;
+    background:linear-gradient(120deg,#0D1830 0%,#1B2A4A 34%,#6E0E1E 68%,#0E4A56 100%);padding:130px 0 120px}
+  .hero::before{content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(600px 400px at 85% 15%,rgba(0,184,169,.28),transparent 65%),
+      radial-gradient(700px 500px at 8% 85%,rgba(200,16,46,.32),transparent 65%)}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .hero .badge{display:inline-flex;align-items:center;gap:9px;font-size:.82rem;font-weight:700;letter-spacing:.06em;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);margin-bottom:22px}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 4px rgba(74,222,128,.25)}
+  .hero h1{color:#fff;font-size:clamp(2.1rem,4.6vw,3.4rem);margin-bottom:18px}
+  .grad-red{background:linear-gradient(90deg,#FF8A95,#FFC1C7);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .grad-blue{background:linear-gradient(90deg,#7FE3FF,#9BF2E4);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:1.12rem;color:rgba(255,255,255,.82);max-width:540px;margin-bottom:32px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+  .hero-trust{display:flex;gap:34px;flex-wrap:wrap}
+  .trust-item .num{font-size:1.6rem;font-weight:800;color:#fff}
+  .trust-item .lbl{font-size:.8rem;color:rgba(255,255,255,.62);letter-spacing:.04em}
+  .hero-visual{position:relative;display:flex;justify-content:center}
+  .hero-card{width:100%;max-width:400px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:26px;padding:30px;backdrop-filter:blur(8px)}
+  .hero-card .hc-top{display:flex;align-items:center;gap:14px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.14);margin-bottom:20px}
+  .avatar{width:66px;height:66px;border-radius:50%;flex:none;display:grid;place-items:center;font-size:1.5rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--red),#FF6B7A);border:3px solid rgba(255,255,255,.4);overflow:hidden}
+  .avatar img{width:100%;height:100%;object-fit:cover;object-position:center 20%;border-radius:50%}
+  .hc-top .nm{font-size:1.15rem;font-weight:800}
+  .hc-top .rl{font-size:.82rem;color:rgba(255,255,255,.68)}
+  .hc-row{display:flex;align-items:center;gap:13px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.06);margin-bottom:10px}
+  .hc-row:last-child{margin-bottom:0}
+  .hc-ic{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex:none}
+  .hc-ic svg{width:20px;height:20px}
+  .hc-ic.red{background:rgba(255,107,122,.2)}
+  .hc-ic.blue{background:rgba(127,227,255,.18)}
+  .hc-ic.teal{background:rgba(155,242,228,.16)}
+  .hc-row b{display:block;font-size:.9rem}
+  .hc-row span{font-size:.76rem;color:rgba(255,255,255,.62)}
+  .wave{display:block;position:absolute;bottom:-1px;left:0;width:100%;height:auto}
+
+  /* ============ DUA LAYANAN ============ */
+  .dual{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
+  .dual-card{position:relative;border-radius:24px;padding:38px 34px;color:#fff;overflow:hidden;box-shadow:var(--shadow-lg)}
+  .dual-card.red{background:linear-gradient(140deg,#A30D24,#D8283F 60%,#EE4B5E)}
+  .dual-card.blue{background:linear-gradient(140deg,#005C73,#0090B3 55%,#0FC0B1)}
+  .dual-card::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.1);top:-90px;right:-90px}
+  .dual-ic{width:58px;height:58px;border-radius:16px;background:rgba(255,255,255,.16);display:grid;place-items:center;margin-bottom:20px}
+  .dual-ic svg{width:28px;height:28px}
+  .dual-card h3{color:#fff;font-size:1.45rem;margin-bottom:10px}
+  .dual-card p{color:rgba(255,255,255,.85);font-size:.97rem;margin-bottom:22px}
+  .dual-card ul{list-style:none;margin-bottom:26px}
+  .dual-card li{display:flex;gap:10px;align-items:flex-start;font-size:.93rem;color:rgba(255,255,255,.92);padding:5px 0}
+  .dual-card li svg{width:17px;height:17px;flex:none;margin-top:4px}
+  .btn-white{background:#fff;color:var(--ink)}
+  .btn-white:hover{transform:translateY(-2px)}
+
+  /* ============ TENTANG ============ */
+  .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+  .about-photo{position:relative}
+  .photo-frame{position:relative;border-radius:28px;aspect-ratio:4/5;background:linear-gradient(160deg,#E8ECF4,#DCE4F0);display:grid;place-items:center;overflow:hidden;box-shadow:var(--shadow-lg)}
+  .photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo-frame .initial{font-size:5.4rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--red),var(--blue));width:150px;height:150px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--shadow-lg)}
+  .photo-frame .ph-note{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font-size:.72rem;color:var(--muted);background:rgba(255,255,255,.85);padding:5px 14px;border-radius:999px;white-space:nowrap}
+  .float-badge{position:absolute;background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);padding:13px 18px;display:flex;align-items:center;gap:11px;font-size:.84rem;font-weight:700}
+  .float-badge small{display:block;font-weight:600;color:var(--muted);font-size:.72rem}
+  .fb1{top:26px;right:-22px}
+  .fb2{bottom:44px;left:-22px}
+  .float-badge .fb-ic{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;flex:none}
+  .fb-ic svg{width:19px;height:19px}
+  .about-copy p{color:var(--muted);margin-bottom:16px}
+  .check-list{list-style:none;margin:22px 0 30px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .check-list li{display:flex;align-items:center;gap:11px;font-size:.93rem;font-weight:600;background:#fff;border:1px solid var(--line);padding:12px 16px;border-radius:13px}
+  .check-list svg{width:20px;height:20px;flex:none}
+
+  /* ============ PRODUK PRUDENTIAL ============ */
+  .sec-red{position:relative;background:linear-gradient(180deg,#FFF5F6 0%,#FDEBED 100%);overflow:hidden}
+  .sec-red::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(200,16,46,.08),transparent 70%);top:-120px;right:-120px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:22px;margin-top:46px}
+  .pcard{background:#fff;border-radius:var(--radius);padding:30px 26px;border:1px solid var(--line);box-shadow:var(--shadow);transition:.3s;position:relative;overflow:hidden}
+  .pcard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red),#FF8090)}
+  .pcard:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+  .sec-blue .pcard::before{background:linear-gradient(90deg,var(--blue),var(--teal))}
+  .p-ic{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;margin-bottom:18px}
+  .p-ic svg{width:26px;height:26px}
+  .p-ic.red{background:rgba(200,16,46,.1)}
+  .p-ic.blue{background:rgba(0,169,206,.12)}
+  .p-ic.teal{background:rgba(0,184,169,.12)}
+  .p-ic.gold{background:rgba(232,181,75,.15)}
+  .pcard h3{font-size:1.13rem;margin-bottom:9px}
+  .pcard p{font-size:.9rem;color:var(--muted);margin-bottom:16px}
+  .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.05em;padding:4px 12px;border-radius:999px}
+  .tag.red{background:rgba(200,16,46,.09);color:var(--red)}
+  .tag.blue{background:rgba(0,169,206,.12);color:#007793}
+  .tag.teal{background:rgba(0,184,169,.14);color:#00857B}
+  .tag.gold{background:rgba(232,181,75,.18);color:#A5781B}
+  .card-link{display:inline-flex;align-items:center;gap:7px;font-size:.87rem;font-weight:700;color:var(--red);cursor:pointer}
+  .card-link svg{width:15px;height:15px;transition:.2s}
+  .card-link:hover svg{transform:translateX(4px)}
+  .sec-blue .card-link{color:#0086A8}
+  .sec-note{margin-top:34px;font-size:.8rem;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:13px;padding:14px 20px;display:flex;gap:11px;align-items:flex-start}
+  .sec-note svg{width:18px;height:18px;flex:none;margin-top:2px}
+
+  /* ============ COWAY ============ */
+  .sec-blue{position:relative;background:linear-gradient(180deg,#F0FBFD 0%,#E9F8F6 100%);overflow:hidden}
+  .sec-blue::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(0,169,206,.1),transparent 70%);bottom:-120px;left:-120px}
+  .coway-perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:42px}
+  .perk{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px 22px;display:flex;gap:15px;align-items:flex-start;box-shadow:var(--shadow)}
+  .perk .p-ic{margin:0;width:44px;height:44px;border-radius:12px}
+  .perk .p-ic svg{width:21px;height:21px}
+  .perk b{display:block;font-size:.95rem;margin-bottom:3px}
+  .perk span{font-size:.83rem;color:var(--muted)}
+
+  .mdl-img{height:150px;display:grid;place-items:center;margin:-6px -6px 2px;background:linear-gradient(160deg,#FAFDFF,#F0FAFB);border-radius:12px;overflow:hidden}
+  .mdl-img img{max-width:100%;max-height:138px;object-fit:contain}
+  .pcard-img{margin:-30px -26px 18px;height:165px;overflow:hidden;border-radius:18px 18px 0 0}
+  .pcard-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .pcard-img.contain{background:linear-gradient(160deg,#FAFDFF,#F0FAFB);display:grid;place-items:center}
+  .pcard-img.contain img{object-fit:contain;max-height:155px;padding:8px 0}
+
+  /* ============ KATALOG COWAY ============ */
+  .catalog{margin-top:56px}
+  .cat-head{margin-bottom:26px}
+  .cat-head h3{font-size:1.5rem;margin-bottom:8px}
+  .cat-head p{color:var(--muted);font-size:.97rem;max-width:580px;margin:0 auto}
+  .cat-filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+  .cat-btn{font-family:var(--font);font-size:.88rem;font-weight:700;padding:10px 20px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;transition:.2s}
+  .cat-btn:hover{border-color:var(--teal);color:var(--navy)}
+  .cat-btn.active{background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;border-color:transparent;box-shadow:0 8px 20px rgba(0,169,206,.3)}
+  .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+  .mdl{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px;box-shadow:var(--shadow);transition:.25s;display:flex;flex-direction:column}
+  .mdl:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+  .mdl h4{margin:11px 0 6px;font-size:1.03rem;color:var(--navy)}
+  .mdl p{font-size:.85rem;color:var(--muted);flex:1;margin-bottom:14px}
+
+  /* ============ CARA / LANGKAH ============ */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:22px;margin-top:46px}
+  .step{background:#fff;border-radius:var(--radius);padding:30px 24px;border:1px solid var(--line);position:relative;box-shadow:var(--shadow)}
+  .step .no{position:absolute;top:-16px;left:24px;width:36px;height:36px;border-radius:11px;display:grid;place-items:center;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--red),var(--blue));box-shadow:var(--shadow)}
+  .step h3{font-size:1.02rem;margin:10px 0 8px}
+  .step p{font-size:.88rem;color:var(--muted)}
+
+  /* ============ TESTIMONI ============ */
+  .sec-dark{background:linear-gradient(150deg,#0D1830,#1B2A4A);color:#fff}
+  .sec-dark h2{color:#fff}
+  .sec-dark .section-sub{color:rgba(255,255,255,.66)}
+  .testis{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:46px}
+  .testi{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:28px 26px}
+  .testi .stars{color:var(--gold);letter-spacing:3px;font-size:.95rem;margin-bottom:14px}
+  .testi p{font-size:.93rem;color:rgba(255,255,255,.85);margin-bottom:18px;font-style:italic}
+  .testi .who{display:flex;align-items:center;gap:12px}
+  .who .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.9rem;color:#fff}
+  .av.a1{background:var(--red)}.av.a2{background:var(--blue)}.av.a3{background:var(--teal)}
+  .who b{display:block;font-size:.9rem}
+  .who span{font-size:.76rem;color:rgba(255,255,255,.6)}
+
+  /* ============ FAQ ============ */
+  .faq{max-width:760px;margin:46px auto 0}
+  .faq-item{background:#fff;border:1px solid var(--line);border-radius:15px;margin-bottom:13px;overflow:hidden;box-shadow:var(--shadow)}
+  .faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:14px;background:none;border:0;padding:20px 24px;font-family:var(--font);font-size:.98rem;font-weight:700;color:var(--navy);text-align:left;cursor:pointer}
+  .faq-q .chev{width:30px;height:30px;border-radius:9px;flex:none;display:grid;place-items:center;background:var(--bg);transition:.3s}
+  .faq-q .chev svg{width:15px;height:15px}
+  .faq-item.open .chev{transform:rotate(180deg);background:var(--teal)}
+  .faq-item.open .chev svg path{stroke:#fff}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .faq-a p{padding:0 24px 22px;font-size:.92rem;color:var(--muted)}
+
+  /* ============ KONTAK ============ */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px;margin-top:46px;align-items:stretch}
+  .contact-info{display:flex;flex-direction:column;gap:16px}
+  .ci-card{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px 22px;box-shadow:var(--shadow)}
+  .ci-card b{display:block;margin-bottom:3px}
+  .ci-card span{font-size:.88rem;color:var(--muted)}
+  form{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:var(--shadow-lg)}
+  form h3{margin-bottom:20px}
+  .fld{margin-bottom:16px}
+  .fld label{display:block;font-size:.84rem;font-weight:700;margin-bottom:7px}
+  .fld input,.fld select,.fld textarea{width:100%;font-family:var(--font);font-size:.93rem;padding:12px 15px;border:1.5px solid var(--line);border-radius:11px;background:var(--bg);transition:.2s;color:var(--ink)}
+  .fld input:focus,.fld select:focus,.fld textarea:focus{outline:0;border-color:var(--teal);background:#fff;box-shadow:0 0 0 4px rgba(0,184,169,.12)}
+  .fld textarea{resize:vertical;min-height:90px}
+  .form-btn{width:100%;justify-content:center;font-size:1rem;padding:15px}
+
+  /* ============ FOOTER ============ */
+  footer{background:#0B1424;color:rgba(255,255,255,.72);padding:60px 0 0}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:44px;padding-bottom:44px}
+  .foot-grid h4{color:#fff;font-size:1rem;margin-bottom:16px}
+  .foot-grid p,.foot-grid a{font-size:.88rem;display:block;margin-bottom:9px;transition:.2s}
+  .foot-grid a:hover{color:var(--teal)}
+  .foot-brand{display:flex;align-items:center;gap:11px;color:#fff;font-weight:800;margin-bottom:16px}
+  .disclaimer{border-top:1px solid rgba(255,255,255,.1);padding:22px 0;font-size:.76rem;color:rgba(255,255,255,.42);line-height:1.7}
+  .copy{border-top:1px solid rgba(255,255,255,.1);padding:18px 0;text-align:center;font-size:.82rem}
+
+  /* ============ FLOATING WA ============ */
+  .wa-float{position:fixed;bottom:26px;right:26px;z-index:99;width:62px;height:62px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.5);transition:.25s;animation:pulse 2.4s infinite}
+  .wa-float:hover{transform:scale(1.1)}
+  .wa-float svg{width:32px;height:32px}
+  @keyframes pulse{0%{box-shadow:0 10px 30px rgba(37,211,102,.5),0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 10px 30px rgba(37,211,102,.5),0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 10px 30px rgba(37,211,102,.5),0 0 0 0 rgba(37,211,102,0)}}
+
+  /* ============ SCROLL REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}
+  .reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ============ MOBILE MENU ============ */
+  .mobile-menu{position:fixed;inset:0;z-index:98;background:linear-gradient(150deg,#0D1830f2,#1B2A4Af5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;opacity:0;pointer-events:none;transition:.3s}
+  .mobile-menu.open{opacity:1;pointer-events:auto}
+  .mobile-menu a{color:#fff;font-size:1.25rem;font-weight:700}
+  .mobile-menu a:hover{color:var(--teal)}
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:900px){
+    .hero-grid,.dual,.about,.contact-grid{grid-template-columns:1fr}
+    .hero{padding:120px 0 100px}
+    .hero-visual{order:-1;margin-bottom:0}
+    .hero-card{max-width:100%}
+    .foot-grid{grid-template-columns:1fr;gap:30px}
+    .check-list{grid-template-columns:1fr}
+    .nav-links{display:none}
+    .hamburger{display:block}
+    .fb1{right:6px}.fb2{left:6px}
+    section{padding:64px 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header id="header">
+  <div class="container nav">
+    <a href="#beranda" class="brand">
+      <span class="logo"><img src="neties-logo.jpg" alt="Logo Neties — Prudential & COWAY"></span>
+      <span><span class="agent-name">Nama Anda</span><small>PRUDENTIAL · COWAY</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#tentang">Tentang</a>
+      <a href="#prudential">Prudential</a>
+      <a href="#coway">COWAY</a>
+      <a href="#cara">Cara Mulai</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-wa wa-link" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l1 2.3c.1.2.1.4 0 .6l-.4.6-.5.6c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l.9-1.1c.2-.3.5-.2.8-.1l2.1 1c.3.2.5.3.6.4.1.2.1.7-.2 1.8z"/></svg>
+        WhatsApp
+      </a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#beranda">Beranda</a>
+  <a href="#tentang">Tentang</a>
+  <a href="#prudential">Prudential</a>
+  <a href="#coway">COWAY</a>
+  <a href="#cara">Cara Mulai</a>
+  <a href="#faq">FAQ</a>
+  <a href="#kontak">Kontak</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="beranda">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge"><span class="dot"></span> Siap Melayani Konsultasi Gratis</div>
+      <h1>Lindungi <span class="grad-red">Masa Depan Keluarga</span>,<br>Nikmati <span class="grad-blue">Hidup Sehat</span> Setiap Hari</h1>
+      <p class="lead">Halo! Saya <b class="agent-name">Nama Anda</b> — agen resmi asuransi <b>Prudential Indonesia</b> sekaligus konsultan produk <b>COWAY</b>. Saya bantu Anda memilih perlindungan finansial yang tepat, sekaligus menghadirkan air bersih &amp; udara sehat di rumah Anda.</p>
+      <div class="hero-cta">
+        <a class="btn btn-red wa-link" data-msg="Halo, saya ingin konsultasi tentang asuransi Prudential." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 6v6c0 5 4 9.3 9 10 5-.7 9-5 9-10V6l-9-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          Konsultasi Asuransi
+        </a>
+        <a class="btn btn-ghost wa-link" data-msg="Halo, saya ingin tanya-tanya tentang produk COWAY." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3s6 6.5 6 11a6 6 0 1 1-12 0c0-4.5 6-11 6-11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          Produk COWAY
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><div class="num">100%</div><div class="lbl">Agen Resmi Terdaftar</div></div>
+        <div class="trust-item"><div class="num">1-on-1</div><div class="lbl">Konsultasi Personal</div></div>
+        <div class="trust-item"><div class="num">Fast</div><div class="lbl">Respon WhatsApp Cepat</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hc-top">
+          <div class="avatar"><img src="neties-web.jpg" alt="Neties — Agen Prudential & Konsultan COWAY"></div>
+          <div>
+            <div class="nm agent-name">Nama Anda</div>
+            <div class="rl">Agen Prudential &amp; Konsultan COWAY</div>
+          </div>
+        </div>
+        <div class="hc-row">
+          <div class="hc-ic red">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8 3 5 6.2 5c2 0 3.4 1.1 4.3 2.3h3c.9-1.2 2.3-2.3 4.3-2.3 3.2 0 5.2 3 3.7 6.8C19.5 16.4 12 21 12 21z" fill="#FF8090"/></svg>
+          </div>
+          <div><b>Asuransi Jiwa &amp; Kesehatan</b><span>Prudential Indonesia · Konvensional &amp; Syariah</span></div>
+        </div>
+        <div class="hc-row">
+          <div class="hc-ic blue">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3s6 6.5 6 11a6 6 0 1 1-12 0c0-4.5 6-11 6-11z" stroke="#7FE3FF" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <div><b>Penyaring Air &amp; Udara</b><span>COWAY · Sewa atau beli, plus perawatan rutin</span></div>
+        </div>
+        <div class="hc-row">
+          <div class="hc-ic teal">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 12h8M12 8v8" stroke="#9BF2E4" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="12" r="9.2" stroke="#9BF2E4" stroke-width="2"/></svg>
+          </div>
+          <div><b>Pendampingan Klaim &amp; Servis</b><span>Dibantu sampai tuntas, tidak ditinggal setelah beli</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" fill="#F6F8FB"><path d="M0,60 C240,110 480,10 720,45 C960,80 1200,20 1440,55 L1440,90 L0,90 Z"/></svg>
+</section>
+
+<!-- ================= DUA LAYANAN ================= -->
+<section>
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">Dua Layanan, Satu Tujuan</span>
+      <h2 class="section-title">Keluarga Terlindungi, Rumah Lebih Sehat</h2>
+      <p class="section-sub">Saya percaya keluarga yang bahagia butuh dua hal: rasa aman secara finansial, dan lingkungan hidup yang sehat. Karena itu saya hadirkan keduanya sekaligus.</p>
+    </div>
+    <div class="dual">
+      <div class="dual-card red reveal d1">
+        <div class="dual-ic">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 6v6c0 5 4 9.3 9 10 5-.7 9-5 9-10V6l-9-4z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Asuransi Prudential</h3>
+        <p>Perlindungan jiwa, kesehatan, dan penyakit kritis untuk Anda dan keluarga — tersedia konvensional maupun syariah.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#FFC1C7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Santunan rawat inap &amp; penyakit kritis</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#FFC1C7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Perlindungan jiwa hingga usia lanjut</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#FFC1C7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Perencanaan warisan &amp; dana pendidikan</li>
+        </ul>
+        <a class="btn btn-white wa-link" data-msg="Halo, saya mau konsultasi gratis tentang asuransi Prudential." target="_blank" rel="noopener" style="color:var(--red)">Konsultasi Gratis →</a>
+      </div>
+      <div class="dual-card blue reveal d2">
+        <div class="dual-ic">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3s6 6.5 6 11a6 6 0 1 1-12 0c0-4.5 6-11 6-11z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M9.5 14a2.5 2.5 0 0 0 2.5 2.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Produk COWAY</h3>
+        <p>Penyaring air, penyaring udara, bidet, hingga kasur premium dari Korea — tersedia skema sewa dengan perawatan rutin.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#9BF2E4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Air minum murni langsung dari dispenser</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#9BF2E4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Udara rumah bebas debu, virus &amp; bau</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#9BF2E4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Coway Heart Service — perawatan berkala gratis</li>
+        </ul>
+        <a class="btn btn-white wa-link" data-msg="Halo, saya mau tanya katalog dan harga produk COWAY." target="_blank" rel="noopener" style="color:#0086A8">Minta Katalog →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TENTANG ================= -->
+<section id="tentang" style="background:#fff">
+  <div class="container about">
+    <div class="about-photo reveal">
+      <div class="photo-frame">
+        <img src="neties-web.jpg" alt="Neties — Agen Prudential & Konsultan COWAY Surabaya" loading="lazy">
+      </div>
+      <div class="float-badge fb1">
+        <span class="fb-ic" style="background:rgba(200,16,46,.1)">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 6v6c0 5 4 9.3 9 10 5-.7 9-5 9-10V6l-9-4z" stroke="#C8102E" stroke-width="2" stroke-linejoin="round"/></svg>
+        </span>
+        <div>Prudential<small>Agen Asuransi Berlisensi</small></div>
+      </div>
+      <div class="float-badge fb2">
+        <span class="fb-ic" style="background:rgba(0,169,206,.12)">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3s6 6.5 6 11a6 6 0 1 1-12 0c0-4.5 6-11 6-11z" stroke="#00A9CE" stroke-width="2" stroke-linejoin="round"/></svg>
+        </span>
+        <div>COWAY<small>Health Planner / Sales</small></div>
+      </div>
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow red reveal">Tentang Saya</span>
+      <h2 class="section-title reveal d1">Halo, Saya <span class="agent-name" style="color:var(--red)">Nama Anda</span> 👋</h2>
+      <p class="reveal d2">Saya adalah agen asuransi <b>Prudential Indonesia</b> dan konsultan produk <b>COWAY</b>. Awalnya saya bergabung di industri ini karena satu keyakinan sederhana: <i>keluarga Indonesia layak mendapatkan perlindungan terbaik dan gaya hidup yang lebih sehat.</i></p>
+      <p class="reveal d2">Bagi saya, menjual bukanlah tujuan utama. Saya lebih senang disebut <b>pendamping</b> — mendengarkan kebutuhan Anda, menjelaskan dengan bahasa yang mudah dipahami, dan tetap hadir saat Anda membutuhkan bantuan klaim maupun servis produk.</p>
+      <ul class="check-list reveal d3">
+        <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#C8102E" opacity=".12"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#C8102E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Terdaftar resmi & berlisensi AAJI</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#00A9CE" opacity=".12"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#00A9CE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Konsultan COWAY berpengalaman</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#00B8A9" opacity=".12"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#00B8A9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Bantu proses klaim sampai cair</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#E8B54B" opacity=".18"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#C99B33" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Konsultasi gratis tanpa tekanan</li>
+      </ul>
+      <a href="#kontak" class="btn btn-red reveal d4">Kenalan Lebih Lanjut →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRUDENTIAL ================= -->
+<section id="prudential" class="sec-red">
+  <div class="container" style="position:relative">
+    <div class="center reveal">
+      <span class="eyebrow red">Asuransi Prudential Indonesia</span>
+      <h2 class="section-title">Solusi Perlindungan untuk Setiap Tahap Hidup</h2>
+      <p class="section-sub">Berikut kategori produk yang paling sering saya rekomendasikan. Setiap orang kebutuhannya berbeda — mari diskusi untuk menemukan yang paling pas untuk Anda.</p>
+    </div>
+    <div class="cards">
+      <div class="pcard reveal d1">
+        <div class="pcard-img"><img src="pru-kesehatan.jpg" alt="Perlindungan Kesehatan — Prudential" loading="lazy"></div>
+        <h3>Perlindungan Kesehatan</h3>
+        <p>Santunan biaya kamar rawat inap, ICU, pembedahan, hingga perawatan sebelum &amp; sesudah rawat inap di rumah sakit.</p>
+        <span class="tag red">Rawat Inap · Cashless</span>
+        <div style="margin-top:14px"><a class="card-link wa-link" data-msg="Halo, saya ingin info produk kesehatan Prudential (rawat inap).">Tanya Detail <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+      <div class="pcard reveal d2">
+        <div class="pcard-img"><img src="pru-invest.jpg" alt="Perlindungan Jiwa & Unit Link — Prudential" loading="lazy"></div>
+        <h3>Perlindungan Jiwa &amp; Unit Link</h3>
+        <p>Perlindungan jiwa jangka panjang yang bisa dipadukan dengan investasi untuk dana pendidikan anak atau pensiun.</p>
+        <span class="tag red">Jiwa + Investasi</span>
+        <div style="margin-top:14px"><a class="card-link wa-link" data-msg="Halo, saya ingin info produk unit link / perlindungan jiwa Prudential.">Tanya Detail <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+      <div class="pcard reveal d3">
+        <div class="pcard-img"><img src="pru-kritis.jpg" alt="Penyakit Kritis — Prudential" loading="lazy"></div>
+        <h3>Penyakit Kritis</h3>
+        <p>Santunan tunai besar saat didiagnosis penyakit kritis — dari tahap awal hingga lanjutan — agar fokus pada pemulihan, bukan biaya.</p>
+        <span class="tag gold">Santunan Tunai</span>
+        <div style="margin-top:14px"><a class="card-link wa-link" data-msg="Halo, saya ingin info perlindungan penyakit kritis Prudential.">Tanya Detail <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+      <div class="pcard reveal d4">
+        <div class="pcard-img"><img src="pru-jiwa.jpg" alt="Syariah & Warisan — Prudential" loading="lazy"></div>
+        <h3>Syariah &amp; Warisan</h3>
+        <p>Pilihan perlindungan berbasis syariah dengan prinsip saling tolong-menolong, serta perencanaan warisan untuk orang tercinta.</p>
+        <span class="tag teal">Syariah Tersedia</span>
+        <div style="margin-top:14px"><a class="card-link wa-link" data-msg="Halo, saya ingin info produk syariah Prudential.">Tanya Detail <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+    </div>
+    <!-- ===== KATALOG PRODUK PRUDENTIAL ===== -->
+    <div class="catalog">
+      <div class="cat-head center reveal">
+        <h3>📋 Produk Unggulan Prudential Indonesia</h3>
+        <p>Sesuai lini produk resmi <b>PT Prudential Life Assurance</b> terkini. Manfaat &amp; premi menyesuaikan usia serta kebutuhan Anda — konsultasikan gratis untuk ilustrasi personal. <a href="https://www.prudential.co.id/id/products/" target="_blank" rel="noopener" style="color:var(--red);font-weight:700">Lihat produk resmi ↗</a></p>
+      </div>
+      <div class="cat-filters reveal">
+        <button class="cat-btn active" data-cat="all">Semua</button>
+        <button class="cat-btn" data-cat="health">❤️ Kesehatan</button>
+        <button class="cat-btn" data-cat="critical">🩺 Penyakit Kritis</button>
+        <button class="cat-btn" data-cat="life">🛡️ Jiwa</button>
+        <button class="cat-btn" data-cat="invest">📈 Unit Link</button>
+      </div>
+      <div class="cat-grid">
+        <div class="mdl reveal" data-cat="health">
+          <span class="tag red">#BeneranPas</span>
+          <h4>PRUSehat</h4>
+          <p>Rawat inap &amp; rawat jalan fleksibel sesuai kebutuhan — tidak kelebihan, tidak kekurangan.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan PRUSehat (asuransi kesehatan). Boleh info premi & manfaat?" target="_blank" rel="noopener">Konsultasi Produk <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="health">
+          <span class="tag gold">Reward 20%</span>
+          <h4>PRUWell Medical</h4>
+          <p>Perlindungan medis komplit + reward keringanan premi hingga 20% tahun berikutnya.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan PRUWell Medical. Boleh info premi & manfaat?" target="_blank" rel="noopener">Konsultasi Produk <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="health">
+          <span class="tag teal">Asuransi Tambahan</span>
+          <h4>PRUWell Health</h4>
+          <p>Manfaat kesehatan tambahan (rider) dengan reward keringanan Biaya Asuransi hingga 20%.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan PRUWell Health. Boleh info premi & manfaat?" target="_blank" rel="noopener">Konsultasi Produk <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+
+        <div class="mdl reveal" data-cat="critical">
+          <span class="tag gold">Uang Kembali</span>
+          <h4>PRUCritical Benefit 88</h4>
+          <p>Proteksi penyakit kritis yang terjamin — dengan manfaat uang pasti kembali.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan PRUCritical Benefit 88. Boleh info premi & manfaat?" target="_blank" rel="noopener">Konsultasi Produk <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="critical">
+          <span class="tag red">Khusus Wanita</span>
+          <h4>PRULady</h4>
+          <p>Proteksi kanker payudara tahap awal–akhir khusus perempuan, manfaat hingga 140% UP.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan PRULady. Boleh info premi & manfaat?" target="_blank" rel="noopener">Konsultasi Produk <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+
+        <div class="mdl reveal" data-cat="life">
+          <span class="tag red">Simpel &amp; Optimal</span>
+          <h4>PRUFuture</h4>
+          <p>Asuransi jiwa sederhana dengan manfaat optimal untuk dana masa depan keluarga.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan PRUFuture. Boleh info premi & manfaat?" target="_blank" rel="noopener">Konsultasi Produk <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="life">
+          <span class="tag gold">Tanpa Medical Check-up</span>
+          <h4>PRUMapan</h4>
+          <p>Perlindungan jiwa + Manfaat Dana Mapan sejak Usia Mapan — pengajuan mudah tanpa pemeriksaan medis.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan PRUMapan. Boleh info premi & manfaat?" target="_blank" rel="noopener">Konsultasi Produk <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="life">
+          <span class="tag red">Dwiguna</span>
+          <h4>PRUProsper</h4>
+          <p>Asuransi jiwa tradisional dwiguna untuk menjaga &amp; mendukung rencana finansial Anda.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan PRUProsper. Boleh info premi & manfaat?" target="_blank" rel="noopener">Konsultasi Produk <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="life">
+          <span class="tag gold">#KembaliLebih</span>
+          <h4>PRUSmart Plan</h4>
+          <p>Uang kembali lebih dari yang dibayarkan — kemudahan pengajuan tanpa pemeriksaan medis.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan PRUSmart Plan. Boleh info premi & manfaat?" target="_blank" rel="noopener">Konsultasi Produk <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+
+        <div class="mdl reveal" data-cat="invest">
+          <span class="tag red">Unit Link</span>
+          <h4>PRULink NextGen</h4>
+          <p>Perlindungan jiwa fleksibel yang dikaitkan investasi — untuk masa depan keluarga.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan PRULink NextGen. Boleh info premi & manfaat?" target="_blank" rel="noopener">Konsultasi Produk <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="invest">
+          <span class="tag teal">Premi Sekali Bayar</span>
+          <h4>PRULink Investor Account</h4>
+          <p>Unit link satu kali bayar dengan beragam pilihan dana investasi.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan PRULink Investor Account. Boleh info premi & manfaat?" target="_blank" rel="noopener">Konsultasi Produk <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-note reveal">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="#5B6474" stroke-width="1.8"/><path d="M12 8h.01M12 11v5" stroke="#5B6474" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Informasi di atas bersifat ringkas dan bukan penawaran resmi. Manfaat, syarat, dan ketentuan lengkap mengacu pada polis masing-masing produk Prudential Indonesia. Saya akan menjelaskan detailnya saat konsultasi.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COWAY ================= -->
+<section id="coway" class="sec-blue">
+  <div class="container" style="position:relative">
+    <div class="center reveal">
+      <span class="eyebrow">COWAY — Healthy Living Solution</span>
+      <h2 class="section-title">Teknologi Korea untuk Rumah Lebih Sehat</h2>
+      <p class="section-sub">COWAY adalah merek No.1 dari Korea Selatan untuk perangkat gaya hidup sehat. Bisa dibeli lunas atau <b>disewa bulanan</b> lengkap dengan perawatan rutin.</p>
+    </div>
+    <div class="cards">
+      <div class="pcard reveal d1">
+        <div class="pcard-img contain"><img src="cw-villaem2.png" alt="COWAY Penyaring Air" loading="lazy"></div>
+        <h3>Penyaring Air</h3>
+        <p>Air minum murni bebas bakteri, logam berat &amp; kaporit — panas, dingin, dan suhu ruang langsung dari satu alat. Hemat biaya galon.</p>
+        <span class="tag blue">Best Seller</span>
+        <div style="margin-top:14px"><a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Water Purifier COWAY. Boleh info harga sewa/beli?">Tanya Harga <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+      <div class="pcard reveal d2">
+        <div class="pcard-img contain"><img src="cw-storm.png" alt="COWAY Penyaring Udara" loading="lazy"></div>
+        <h3>Penyaring Udara</h3>
+        <p>Menyaring debu halus PM2.5, virus, bakteri, alergen, dan bau tak sedap. Ideal untuk kamar bayi, penderita alergi, dan rumah di kota besar.</p>
+        <span class="tag teal">Anti Polusi</span>
+        <div style="margin-top:14px"><a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Air Purifier COWAY. Boleh info harga sewa/beli?">Tanya Harga <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+      <div class="pcard reveal d3">
+        <div class="p-ic blue">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3s6 6.5 6 11a6 6 0 1 1-12 0c0-4.5 6-11 6-11z" stroke="#0086A8" stroke-width="2" stroke-linejoin="round"/><path d="M8 13.5c1.2 1 2.5 1.5 4 1.5s2.8-.5 4-1.5" stroke="#0086A8" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Bidet &amp; Kamar Mandi</h3>
+        <p>Bidet modern yang lebih higienis, hemat tisu, dan nyaman untuk seluruh keluarga — termasuk lansia dan ibu pasca-melahirkan.</p>
+        <span class="tag blue">Higienis</span>
+        <div style="margin-top:14px"><a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Bidet COWAY. Boleh info harga?">Tanya Harga <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+      <div class="pcard reveal d4">
+        <div class="p-ic gold">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6" stroke="#C99B33" stroke-width="2" stroke-linecap="round"/><path d="M3 18h18M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3" stroke="#C99B33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 13.5h.01M17 13.5h.01" stroke="#C99B33" stroke-width="2.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Kasur &amp; Perawatan Tidur</h3>
+        <p>Kasur premium dengan layanan perawatan anti-tungau berkala — tidur lebih nyenyak dan bebas alergi setiap malam.</p>
+        <span class="tag gold">Premium</span>
+        <div style="margin-top:14px"><a class="card-link wa-link" data-msg="Halo, saya tertarik dengan kasur COWAY. Boleh info harga?">Tanya Harga <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="coway-perks">
+      <div class="perk reveal d1">
+        <div class="p-ic blue"><svg viewBox="0 0 24 24" fill="none"><path d="M14.5 4.5l5 5L8 21H3v-5L14.5 4.5z" stroke="#0086A8" stroke-width="2" stroke-linejoin="round"/><path d="M12 7l5 5" stroke="#0086A8" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div><b>Coway Heart Service</b><span>Teknisi datang rutin untuk ganti filter &amp; sanitasi unit.</span></div>
+      </div>
+      <div class="perk reveal d2">
+        <div class="p-ic teal"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2.5" stroke="#00857B" stroke-width="2"/><path d="M3 10h18M7 15h4" stroke="#00857B" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div><b>Sewa atau Beli</b><span>Mulai dari cicilan bulanan ringan, tanpa kartu kredit.</span></div>
+      </div>
+      <div class="perk reveal d3">
+        <div class="p-ic blue"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 6v6c0 5 4 9.3 9 10 5-.7 9-5 9-10V6l-9-4z" stroke="#0086A8" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#0086A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><b>Garansi Resmi</b><span>Garansi penuh selama masa sewa, teknisi resmi COWAY.</span></div>
+      </div>
+      <div class="perk reveal d4">
+        <div class="p-ic teal"><svg viewBox="0 0 24 24" fill="none"><path d="M21 14a2 2 0 0 1-2 2H8l-5 4V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8z" stroke="#00857B" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div><b>Survei &amp; Demo Gratis</b><span>Coba dulu di rumah Anda — gratis, tanpa kewajiban beli.</span></div>
+      </div>
+    </div>
+    <!-- ===== KATALOG MODEL COWAY ===== -->
+    <div class="catalog">
+      <div class="cat-head center reveal">
+        <h3>📋 Pilihan Model Resmi COWAY</h3>
+        <p>Sesuai e-katalog resmi Coway Indonesia. Semua model bisa <b>disewa bulanan</b> (termasuk servis & ganti filter) atau <b>dibeli putus</b>. <a href="https://ecatalog.coway.id" target="_blank" rel="noopener" style="color:#0086A8;font-weight:700">Lihat e-katalog resmi ↗</a></p>
+      </div>
+      <div class="cat-filters reveal">
+        <button class="cat-btn active" data-cat="all">Semua</button>
+        <button class="cat-btn" data-cat="water">💧 Penyaring Air</button>
+        <button class="cat-btn" data-cat="air">🌬️ Penyaring Udara</button>
+        <button class="cat-btn" data-cat="body">🛁 Body Care</button>
+      </div>
+      <div class="cat-grid">
+        <div class="mdl reveal" data-cat="water">
+          <div class="mdl-img"><img src="cw-villaem3.png" alt="COWAY Villaem III" loading="lazy"></div>
+          <span class="tag blue">Seri Terbaru</span>
+          <h4>Villaem III</h4>
+          <p>Flagship terbaru — fitur terlengkap dengan desain premium untuk dapur modern.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Water Purifier COWAY Villaem III. Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="water">
+          <div class="mdl-img"><img src="cw-villaem2.png" alt="COWAY Villaem II" loading="lazy"></div>
+          <span class="tag blue">Best Seller</span>
+          <h4>Villaem II</h4>
+          <p>Paling laris! Panas · dingin · normal, ringkas untuk dapur keluarga.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Water Purifier COWAY Villaem II. Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="water">
+          <div class="mdl-img"><img src="cw-ombak.png" alt="COWAY Ombak" loading="lazy"></div>
+          <span class="tag teal">Tankless</span>
+          <h4>Ombak</h4>
+          <p>Tanpa tangki penampungan — air selalu segar mengalir &amp; lebih higienis.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Water Purifier COWAY Ombak. Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="water">
+          <div class="mdl-img"><img src="cw-core.png" alt="COWAY Core" loading="lazy"></div>
+          <span class="tag blue">Kapasitas Besar</span>
+          <h4>Core</h4>
+          <p>Kapasitas besar untuk pemakaian ramai — keluarga besar, kantor &amp; usaha.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Water Purifier COWAY Core. Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="water">
+          <div class="mdl-img"><img src="cw-neoplus.png" alt="COWAY Neo Plus" loading="lazy"></div>
+          <span class="tag teal">Kompak &amp; Hemat</span>
+          <h4>Neo Plus</h4>
+          <p>Ringkas dan ekonomis — pilihan pas untuk mulai hidup sehat.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Water Purifier COWAY Neo Plus. Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="water">
+          <div class="mdl-img"><img src="cw-cinnamon.png" alt="COWAY Cinnamon" loading="lazy"></div>
+          <span class="tag gold">Desain Elegan</span>
+          <h4>Cinnamon</h4>
+          <p>Warna warm yang elegan — cantik untuk interior rumah yang estetik.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Water Purifier COWAY Cinnamon. Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="water">
+          <div class="mdl-img"><img src="cw-kristal.png" alt="COWAY Coway Kristal Ice" loading="lazy"></div>
+          <span class="tag gold">Bikin Es Batu</span>
+          <h4>Coway Kristal Ice</h4>
+          <p>Unik! Air minum murni <b>plus es batu</b> langsung dari satu alat.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan COWAY Kristal Ice (water purifier + ice maker). Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="water">
+          <div class="mdl-img"><img src="cw-slimstand.png" alt="COWAY Slim Stand" loading="lazy"></div>
+          <span class="tag teal">Hemat Tempat</span>
+          <h4>Slim Stand</h4>
+          <p>Model berdiri ramping — hemat tempat untuk apartemen &amp; pantry.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Water Purifier COWAY Slim Stand. Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+
+        <div class="mdl reveal" data-cat="air">
+          <div class="mdl-img"><img src="cw-storm.png" alt="COWAY Storm" loading="lazy"></div>
+          <span class="tag blue">Ikonik</span>
+          <h4>Storm</h4>
+          <p>Sirkulasi udara kuat — menyaring debu halus, bakteri hingga virus.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Air Purifier COWAY Storm. Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="air">
+          <div class="mdl-img"><img src="cw-triplepower.jpg" alt="COWAY Triple Power" loading="lazy"></div>
+          <span class="tag teal">Ruang Besar</span>
+          <h4>Triple Power</h4>
+          <p>Tenaga filtrasi ekstra kuat untuk ruangan luas.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Air Purifier COWAY Triple Power. Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="air">
+          <div class="mdl-img"><img src="cw-breeze.png" alt="COWAY Breeze" loading="lazy"></div>
+          <span class="tag teal">Senyap</span>
+          <h4>Breeze</h4>
+          <p>Lembut &amp; senyap — teman tidur bayi dan penderita alergi.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Air Purifier COWAY Breeze. Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="air">
+          <div class="mdl-img"><img src="cw-lombok.jpg" alt="COWAY Lombok" loading="lazy"></div>
+          <span class="tag blue">Seri Terbaru</span>
+          <h4>Lombok</h4>
+          <p>Generasi terbaru — desain modern dengan jangkauan penyaringan luas.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Air Purifier COWAY Lombok. Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="air">
+          <div class="mdl-img"><img src="cw-noble.png" alt="COWAY Noble" loading="lazy"></div>
+          <span class="tag gold">Premium</span>
+          <h4>Noble</h4>
+          <p>Sensor pintar dengan indikator kualitas udara real-time.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Air Purifier COWAY Noble. Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="air">
+          <div class="mdl-img"><img src="cw-squarefit.png" alt="COWAY Squarefit" loading="lazy"></div>
+          <span class="tag teal">Slim Persegi</span>
+          <h4>Squarefit</h4>
+          <p>Bentuk persegi ramping — muat manis di sudut ruangan minimalis.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Air Purifier COWAY Squarefit. Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="mdl reveal" data-cat="air">
+          <div class="mdl-img"><img src="cw-squarebig.png" alt="COWAY Squarebig" loading="lazy"></div>
+          <span class="tag blue">Coverage Luas</span>
+          <h4>Squarebig</h4>
+          <p>Versi besar — untuk ruang keluarga, ruko &amp; area komersial.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan Air Purifier COWAY Squarebig. Boleh info harga & promo?" target="_blank" rel="noopener">Tanya Harga &amp; Promo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+
+        <div class="mdl reveal" data-cat="body">
+          <span class="tag gold">Body Care</span>
+          <h4>Body Care Series</h4>
+          <p>Bidet &amp; rangkaian produk perawatan tubuh higienis dari COWAY.</p>
+          <a class="card-link wa-link" data-msg="Halo, saya tertarik dengan produk Body Care COWAY (bidet dll). Boleh info katalog & harga?" target="_blank" rel="noopener">Tanya Katalog <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-note reveal" style="background:#fff">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="#5B6474" stroke-width="1.8"/><path d="M12 8h.01M12 11v5" stroke="#5B6474" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Harga dan promo COWAY berubah berkala mengikuti kebijakan perusahaan. Hubungi saya untuk harga terbaru, simulasi cicilan, dan jadwal demo gratis di rumah Anda.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CARA MULAI ================= -->
+<section id="cara">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">Semudah 1-2-3</span>
+      <h2 class="section-title">Cara Mulai, Tanpa Ribet</h2>
+      <p class="section-sub">Baik untuk asuransi maupun COWAY, prosesnya sama-sama sederhana. Anda cukup chat, sisanya saya yang urus.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal d1">
+        <div class="no">1</div>
+        <h3>Chat WhatsApp</h3>
+        <p>Klik tombol WhatsApp dan ceritakan kebutuhan Anda — tidak perlu bahasa formal, santai saja 😊</p>
+      </div>
+      <div class="step reveal d2">
+        <div class="no">2</div>
+        <h3>Konsultasi / Demo Gratis</h3>
+        <p>Saya analisis kebutuhan &amp; bujet Anda, atau jadwalkan demo produk COWAY langsung di rumah Anda.</p>
+      </div>
+      <div class="step reveal d3">
+        <div class="no">3</div>
+        <h3>Pilih Solusi Terbaik</h3>
+        <p>Anda dapat rekomendasi yang jujur — tanpa tekanan, tanpa paksaan. Keputusan 100% di tangan Anda.</p>
+      </div>
+      <div class="step reveal d4">
+        <div class="no">4</div>
+        <h3>Dibantu Sampai Tuntas</h3>
+        <p>Dari pendaftaran, instalasi, sampai klaim asuransi &amp; jadwal servis rutin — saya dampingi terus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONI ================= -->
+<section class="sec-dark">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow" style="background:rgba(0,184,169,.15);color:#5EEAD4">Kata Mereka</span>
+      <h2 class="section-title">Cerita dari Nasabah &amp; Pelanggan</h2>
+      <p class="section-sub">Kepercayaan adalah segalanya bagi saya. Ini kata mereka yang sudah saya dampingi.</p>
+    </div>
+    <div class="testis">
+      <div class="testi reveal d1">
+        <div class="stars">★★★★★</div>
+        <p>"Awalnya ragu soal asuransi, tapi dijelasinnya enak banget, nggak pakai istilah ribet. Pas anak saya rawat inap, klaimnya dibantu sampai cair. Terima kasih banyak!"</p>
+        <div class="who">
+          <span class="av a1">DR</span>
+          <div><b>Ibu Dewi R.</b><span>Nasabah Prudential — Ibu Rumah Tangga</span></div>
+        </div>
+      </div>
+      <div class="testi reveal d2">
+        <div class="stars">★★★★★</div>
+        <p>"Sewa water purifier COWAY lewat beliau. Demo di rumah gratis, penjelasan jujur soal biaya. Sekarang nggak pernah repot ganti galon lagi, anak-anak juga minum lebih banyak."</p>
+        <div class="who">
+          <span class="av a2">AS</span>
+          <div><b>Bpk. Andi S.</b><span>Pelanggan COWAY — Karyawan Swasta</span></div>
+        </div>
+      </div>
+      <div class="testi reveal d3">
+        <div class="stars">★★★★★</div>
+        <p>"Responsnya cepat banget tiap saya tanya-tanya. Pas jadwal servis filter datang juga diingetin duluan. Rasanya punya asisten pribadi untuk urusan rumah. Recommended!"</p>
+        <div class="who">
+          <span class="av a3">MW</span>
+          <div><b>Ibu Maya W.</b><span>Nasabah &amp; Pelanggan COWAY — Guru</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow red">Tanya Jawab</span>
+      <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item reveal">
+        <button class="faq-q">Apakah konsultasinya benar-benar gratis?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1B2A4A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-a"><p>Ya, 100% gratis dan tanpa kewajiban membeli. Saya percaya edukasi dulu, keputusan belakangan. Silakan tanya apa saja — premi, manfaat, atau sekadar membandingkan produk.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Berapa premi asuransi Prudential per bulan?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1B2A4A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-a"><p>Premi sangat bervariasi tergantung usia, manfaat yang dipilih, dan kondisi kesehatan — mulai dari ratusan ribu rupiah per bulan. Chat saya untuk ilustrasi personal yang sesuai bujet Anda.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">COWAY itu sistem sewa atau beli?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1B2A4A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-a"><p>Keduanya bisa! Skema <b>sewa</b> sudah termasuk ganti filter &amp; servis rutin gratis dengan cicilan bulanan ringan. Skema <b>beli putus</b> juga tersedia bagi yang ingin langsung memiliki. Saya bantu hitung mana yang lebih hemat untuk Anda.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Bagaimana kalau saya mau klaim asuransi nanti?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1B2A4A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-a"><p>Inilah bedanya beli lewat agen yang peduli 🙂 Saya akan dampingi Anda menyiapkan dokumen dan memantau proses klaim sampai selesai. Untuk produk kesehatan dengan fasilitas cashless, cukup tunjukkan kartu di rumah sakit rekanan.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Area mana saja yang dilayani?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1B2A4A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-a"><p>Konsultasi asuransi bisa online dari mana saja di seluruh Indonesia. Untuk demo &amp; pemasangan COWAY, saya melayani area <b class="agent-area">Surabaya &amp; Sekitarnya</b> — hubungi saya untuk cek ketersediaan area Anda.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONTAK ================= -->
+<section id="kontak" style="background:#fff">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">Hubungi Saya</span>
+      <h2 class="section-title">Yuk, Mulai dari Obrolan Santai</h2>
+      <p class="section-sub">Isi formulir di bawah atau langsung klik WhatsApp — saya balas secepatnya pada jam layanan.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <a class="ci-card wa-link reveal d1" target="_blank" rel="noopener" style="cursor:pointer">
+          <span class="p-ic" style="background:rgba(37,211,102,.12);margin:0">
+            <svg viewBox="0 0 24 24" fill="#25D366" width="26" height="26"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l1 2.3c.1.2.1.4 0 .6l-.4.6-.5.6c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l.9-1.1c.2-.3.5-.2.8-.1l2.1 1c.3.2.5.3.6.4.1.2.1.7-.2 1.8z"/></svg>
+          </span>
+          <div><b>WhatsApp (Respon Tercepat)</b><span class="wa-display">+62 812-XXXX-XXXX</span></div>
+        </a>
+        <div class="ci-card reveal d2">
+          <span class="p-ic red" style="margin:0">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#C8102E" stroke-width="2"/><path d="M12 7.5v5l3 2" stroke="#C8102E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div><b>Jam Layanan</b><span>Senin – Sabtu, 08.00 – 20.00 WIB<br>(di luar jam itu tetap dibalas, agak slow response 😊)</span></div>
+        </div>
+        <div class="ci-card reveal d3">
+          <span class="p-ic teal" style="margin:0">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z" stroke="#00857B" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.6" stroke="#00857B" stroke-width="2"/></svg>
+          </span>
+          <div><b>Area Layanan</b><span><span class="agent-area">Surabaya &amp; Sekitarnya</span> — kunjungan &amp; demo COWAY by appointment</span></div>
+        </div>
+        <div class="ci-card reveal d4">
+          <span class="p-ic gold" style="margin:0">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="#C99B33" stroke-width="2"/><path d="M3.5 7l8.5 6 8.5-6" stroke="#C99B33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div><b>Email &amp; Media Sosial</b><span>
+            📧 <a href="/cdn-cgi/l/email-protection#0b656e7f626e783a383d4b6c666a626725686466" style="color:var(--teal);font-weight:700"><span class="__cf_email__" data-cfemail="432d26372a263072707503242e222a2f6d202c2e">[email&#160;protected]</span></a><br>
+            📷 IG: <a href="https://instagram.com/netiesyamsibar" target="_blank" rel="noopener" style="color:var(--teal);font-weight:700">@netiesyamsibar</a><br>
+            👍 FB: <a href="https://www.facebook.com/netie.syamsibar" target="_blank" rel="noopener" style="color:var(--teal);font-weight:700">Netie Syamsibar</a>
+          </span></div>
+        </div>
+      </div>
+      <form id="waForm" class="reveal" onsubmit="return sendWA(event)">
+        <h3>📩 Kirim Pesan Cepat</h3>
+        <div class="fld">
+          <label for="fnama">Nama Anda</label>
+          <input id="fnama" type="text" placeholder="Tulis nama Anda" required>
+        </div>
+        <div class="fld">
+          <label for="ftopik">Saya tertarik tentang</label>
+          <select id="ftopik">
+            <option>Asuransi Kesehatan Prudential</option>
+            <option>Asuransi Jiwa / Unit Link Prudential</option>
+            <option>Perlindungan Penyakit Kritis</option>
+            <option>Asuransi Syariah Prudential</option>
+            <option>COWAY — Penyaring Air</option>
+            <option>COWAY — Penyaring Udara</option>
+            <option>COWAY — Bidet</option>
+            <option>COWAY — Kasur</option>
+            <option>Lainnya / Belum yakin</option>
+          </select>
+        </div>
+        <div class="fld">
+          <label for="fpesan">Pesan (opsional)</label>
+          <textarea id="fpesan" placeholder="Contoh: Saya ingin tahu premi untuk usia 30 tahun..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-wa form-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l1 2.3c.1.2.1.4 0 .6l-.4.6-.5.6c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l.9-1.1c.2-.3.5-.2.8-.1l2.1 1c.3.2.5.3.6.4.1.2.1.7-.2 1.8z"/></svg>
+          Kirim via WhatsApp
+        </button>
+        <p style="font-size:.76rem;color:var(--muted);text-align:center;margin-top:12px">Pesan akan terbuka di aplikasi WhatsApp Anda, tinggal tekan kirim.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="logo" style="width:38px;height:38px;border-radius:11px;display:grid;place-items:center;overflow:hidden"><img src="neties-logo.jpg" alt="Logo Neties" style="width:100%;height:100%;object-fit:cover;border-radius:11px;display:block"></span>
+          <span class="agent-name">Nama Anda</span>
+        </div>
+        <p>Agen asuransi Prudential Indonesia &amp; konsultan produk COWAY. Melayani dengan hati, mendampingi sampai tuntas.</p>
+        <div style="display:flex;gap:10px;margin-top:6px;flex-wrap:wrap">
+          <a href="https://instagram.com/netiesyamsibar" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;font-size:.82rem;padding:7px 14px;border:1px solid rgba(255,255,255,.28);border-radius:999px;margin:0">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/netie.syamsibar" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;font-size:.82rem;padding:7px 14px;border:1px solid rgba(255,255,255,.28);border-radius:999px;margin:0">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.5h-2.6C11.2 2.5 10.5 4.6 10.5 6.4v2.1H8v3h2.5v10H14v-10h2.6l.4-3H14z"/></svg>
+            Facebook
+          </a>
+          <a href="/cdn-cgi/l/email-protection#a8c6cddcc1cddb999b9ee8cfc5c9c1c486cbc7c5" style="display:inline-flex;align-items:center;gap:7px;font-size:.82rem;padding:7px 14px;border:1px solid rgba(255,255,255,.28);border-radius:999px;margin:0">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M3.5 7l8.5 6 8.5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Layanan</h4>
+        <a href="#prudential">Asuransi Kesehatan</a>
+        <a href="#prudential">Asuransi Jiwa &amp; Unit Link</a>
+        <a href="#coway">Penyaring Air COWAY</a>
+        <a href="#coway">Penyaring Udara COWAY</a>
+        <a href="#coway">Bidet &amp; Kasur COWAY</a>
+      </div>
+      <div>
+        <h4>Navigasi</h4>
+        <a href="#tentang">Tentang Saya</a>
+        <a href="#cara">Cara Mulai</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+    </div>
+    <div class="disclaimer">
+      Disclaimer: Website ini adalah website pribadi milik agen dan bukan website resmi PT Prudential Life Assurance (Prudential Indonesia) maupun PT Coway International Indonesia. Prudential Indonesia berizin dan diawasi oleh Otoritas Jasa Keuangan (OJK). Seluruh informasi produk bersifat ringkas — syarat, ketentuan, manfaat, dan harga mengacu pada dokumen resmi masing-masing perusahaan.
+    </div>
+    <div class="copy">© <span id="year"></span> <span class="agent-name">Neties</span> · Dibuat dengan ❤️ untuk keluarga Indonesia yang lebih terlindungi &amp; sehat. · <a href="admin.html" style="color:inherit;opacity:.55;text-decoration:underline">⚙️ Admin</a></div>
+  </div>
+</footer>
+
+<!-- ================= FLOATING WA ================= -->
+<a class="wa-float wa-link" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l1 2.3c.1.2.1.4 0 .6l-.4.6-.5.6c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l.9-1.1c.2-.3.5-.2.8-.1l2.1 1c.3.2.5.3.6.4.1.2.1.7-.2 1.8z"/></svg>
+</a>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ============================================================
+   PENGATURAN WEBSITE — SEMUA TEKS HALAMAN ADA DI FILE config.js
+   ✏️ Cara mengedit: buka Panel Admin (admin.html), ubah isi
+   formulirnya, download config.js, lalu upload ke GitHub.
+   ⚠️ Jangan edit angka/teks di blok ini secara manual.
+   ============================================================ */
+const CFG = window.CONFIG || {};
+const AGENT = {
+  name: CFG.name || "Neties",
+  wa:   CFG.wa   || "6281315100690",
+  area: CFG.area || "Surabaya & Sekitarnya",
+  defaultMsg: CFG.def_msg || "Halo, saya melihat website Anda dan ingin bertanya."
+};
+/* ============================================================ */
+
+// Peta lokasi teks ↔ kunci di config.js (untuk Panel Admin)
+const MAP = {
+  hero_badge:[".hero .badge","1"], hero_lead:[".hero p.lead"],
+  t1n:[".hero-trust .trust-item:nth-child(1) .num"], t1l:[".hero-trust .trust-item:nth-child(1) .lbl"],
+  t2n:[".hero-trust .trust-item:nth-child(2) .num"], t2l:[".hero-trust .trust-item:nth-child(2) .lbl"],
+  t3n:[".hero-trust .trust-item:nth-child(3) .num"], t3l:[".hero-trust .trust-item:nth-child(3) .lbl"],
+  red_desc:[".dual-card.red p"], blue_desc:[".dual-card.blue p"],
+  red_li1:[".dual-card.red li:nth-child(1)","1"], red_li2:[".dual-card.red li:nth-child(2)","1"], red_li3:[".dual-card.red li:nth-child(3)","1"],
+  blue_li1:[".dual-card.blue li:nth-child(1)","1"], blue_li2:[".dual-card.blue li:nth-child(2)","1"], blue_li3:[".dual-card.blue li:nth-child(3)","1"],
+  about_p1:["#tentang .about-copy p:nth-of-type(1)"], about_p2:["#tentang .about-copy p:nth-of-type(2)"],
+  chk1:[".check-list li:nth-child(1)","1"], chk2:[".check-list li:nth-child(2)","1"], chk3:[".check-list li:nth-child(3)","1"], chk4:[".check-list li:nth-child(4)","1"],
+  p1_desc:["#prudential .pcard:nth-child(1) p"], p1_tag:["#prudential .pcard:nth-child(1) .tag"],
+  p2_desc:["#prudential .pcard:nth-child(2) p"], p2_tag:["#prudential .pcard:nth-child(2) .tag"],
+  p3_desc:["#prudential .pcard:nth-child(3) p"], p3_tag:["#prudential .pcard:nth-child(3) .tag"],
+  p4_desc:["#prudential .pcard:nth-child(4) p"], p4_tag:["#prudential .pcard:nth-child(4) .tag"],
+  pru_note:["#prudential .sec-note span"],
+  c1_desc:["#coway .pcard:nth-child(1) p"], c1_tag:["#coway .pcard:nth-child(1) .tag"],
+  c2_desc:["#coway .pcard:nth-child(2) p"], c2_tag:["#coway .pcard:nth-child(2) .tag"],
+  c3_desc:["#coway .pcard:nth-child(3) p"], c3_tag:["#coway .pcard:nth-child(3) .tag"],
+  c4_desc:["#coway .pcard:nth-child(4) p"], c4_tag:["#coway .pcard:nth-child(4) .tag"],
+  perk1b:["#coway .perk:nth-child(1) b"], perk1s:["#coway .perk:nth-child(1) span"],
+  perk2b:["#coway .perk:nth-child(2) b"], perk2s:["#coway .perk:nth-child(2) span"],
+  perk3b:["#coway .perk:nth-child(3) b"], perk3s:["#coway .perk:nth-child(3) span"],
+  perk4b:["#coway .perk:nth-child(4) b"], perk4s:["#coway .perk:nth-child(4) span"],
+  cow_note:["#coway .sec-note span"],
+  step1:["#cara .step:nth-child(1) p"], step2:["#cara .step:nth-child(2) p"],
+  step3:["#cara .step:nth-child(3) p"], step4:["#cara .step:nth-child(4) p"],
+  testi1p:[".testi:nth-child(1) p"], testi1n:[".testi:nth-child(1) .who b"], testi1r:[".testi:nth-child(1) .who span"],
+  testi2p:[".testi:nth-child(2) p"], testi2n:[".testi:nth-child(2) .who b"], testi2r:[".testi:nth-child(2) .who span"],
+  testi3p:[".testi:nth-child(3) p"], testi3n:[".testi:nth-child(3) .who b"], testi3r:[".testi:nth-child(3) .who span"],
+  faq1q:[".faq-item:nth-child(1) .faq-q","0"], faq1a:[".faq-item:nth-child(1) .faq-a p"],
+  faq2q:[".faq-item:nth-child(2) .faq-q","0"], faq2a:[".faq-item:nth-child(2) .faq-a p"],
+  faq3q:[".faq-item:nth-child(3) .faq-q","0"], faq3a:[".faq-item:nth-child(3) .faq-a p"],
+  faq4q:[".faq-item:nth-child(4) .faq-q","0"], faq4a:[".faq-item:nth-child(4) .faq-a p"],
+  faq5q:[".faq-item:nth-child(5) .faq-q","0"], faq5a:[".faq-item:nth-child(5) .faq-a p"],
+  hours:[".contact-info .ci-card:nth-of-type(2) span"],
+  disclaimer:["footer .disclaimer"]
+};
+for(const k in MAP){
+  if(CFG[k]===undefined) continue;
+  const el = document.querySelector(MAP[k][0]);
+  if(!el) continue;
+  if(MAP[k][1]!==undefined){
+    const n = el.childNodes[parseInt(MAP[k][1])];
+    if(n) n.nodeValue = CFG[k];
+  } else {
+    el.innerHTML = CFG[k];
+  }
+}
+
+// Terapkan identitas ke semua elemen
+document.querySelectorAll(".agent-name").forEach(el => el.textContent = AGENT.name);
+document.querySelectorAll(".agent-area").forEach(el => el.textContent = AGENT.area);
+document.querySelector(".wa-display").textContent = "+" + AGENT.wa.replace(/^62/, "62 ").replace(/(\d{3})(\d{4})/, "$1-$2-");
+document.title = AGENT.name + " — Agen Prudential & COWAY";
+
+// Tautan kontak turunan: email, Instagram, Facebook
+if(CFG.email){
+  const em = document.querySelector('.contact-info a[href^="mailto:"]');
+  if(em){ em.href = "mailto:"+CFG.email; em.textContent = CFG.email; }
+  document.querySelectorAll('footer a[href^="mailto:"]').forEach(a => a.href = "mailto:"+CFG.email);
+}
+if(CFG.ig){
+  const ig1 = document.querySelector('.contact-info a[href*="instagram.com"]');
+  if(ig1){ ig1.href = "https://instagram.com/"+CFG.ig; ig1.textContent = "@"+CFG.ig; }
+  const ig2 = document.querySelector('footer a[href*="instagram.com"]');
+  if(ig2) ig2.href = "https://instagram.com/"+CFG.ig;
+}
+if(CFG.fb_url){
+  const fb1 = document.querySelector('.contact-info a[href*="facebook.com"]');
+  if(fb1){ fb1.href = CFG.fb_url; if(CFG.fb_name) fb1.textContent = CFG.fb_name; }
+  const fb2 = document.querySelector('footer a[href*="facebook.com"]');
+  if(fb2) fb2.href = CFG.fb_url;
+}
+
+// Bangun semua tautan WhatsApp
+function waURL(msg){ return "https://wa.me/" + AGENT.wa + "?text=" + encodeURIComponent(msg || AGENT.defaultMsg); }
+document.querySelectorAll(".wa-link").forEach(a => {
+  a.href = waURL(a.dataset.msg);
+});
+
+// Form → WhatsApp
+function sendWA(e){
+  e.preventDefault();
+  const nama  = document.getElementById("fnama").value.trim();
+  const topik = document.getElementById("ftopik").value;
+  const pesan = document.getElementById("fpesan").value.trim();
+  let teks = "Halo, saya " + nama + ".\nSaya tertarik tentang: " + topik + ".";
+  if(pesan) teks += "\n\nPesan: " + pesan;
+  window.open(waURL(teks), "_blank");
+  return false;
+}
+
+// Tahun footer
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Navbar scroll effect
+const header = document.getElementById("header");
+window.addEventListener("scroll", () => {
+  header.classList.toggle("scrolled", window.scrollY > 40);
+});
+
+// Mobile menu
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+hamburger.addEventListener("click", () => mobileMenu.classList.toggle("open"));
+mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => mobileMenu.classList.remove("open")));
+
+// FAQ accordion
+document.querySelectorAll(".faq-q").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const item = btn.parentElement;
+    const ans = item.querySelector(".faq-a");
+    const wasOpen = item.classList.contains("open");
+    document.querySelectorAll(".faq-item").forEach(i => {
+      i.classList.remove("open");
+      i.querySelector(".faq-a").style.maxHeight = null;
+    });
+    if(!wasOpen){
+      item.classList.add("open");
+      ans.style.maxHeight = ans.scrollHeight + "px";
+    }
+  });
+});
+
+// Scroll reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add("visible"); io.unobserve(en.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+// Filter katalog (COWAY & Prudential — masing-masing mandiri)
+document.querySelectorAll(".catalog").forEach(cat => {
+  cat.querySelectorAll(".cat-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      cat.querySelectorAll(".cat-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const c = btn.dataset.cat;
+      cat.querySelectorAll(".mdl").forEach(m => {
+        m.style.display = (c === "all" || m.dataset.cat === c) ? "flex" : "none";
+      });
+    });
+  });
+});
+</script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a464addef867e783',t:'MTc5MTI4OTg0NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
