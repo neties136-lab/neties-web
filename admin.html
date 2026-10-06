@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Admin — Website Neties</title>
+<link rel="icon" type="image/jpeg" href="neties-logo.jpg">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --red:#C8102E; --blue:#00A9CE; --teal:#00B8A9; --navy:#111D33;
+    --ink:#1F2430; --muted:#5B6474; --line:#E7EAF0; --bg:#F4F6FA;
+    --shadow:0 10px 30px rgba(17,29,51,.10); --radius:16px;
+    --font:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.6}
+
+  /* ===== PIN GATE ===== */
+  #pinGate{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(140deg,#0D1830,#1B2A4A 55%,#4A0D18);padding:20px}
+  .pin-card{background:#fff;border-radius:24px;padding:44px 38px;max-width:380px;width:100%;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+  .pin-card img{width:76px;height:76px;border-radius:18px;margin-bottom:18px;box-shadow:var(--shadow)}
+  .pin-card h1{font-size:1.35rem;color:var(--navy);margin-bottom:6px}
+  .pin-card p{font-size:.88rem;color:var(--muted);margin-bottom:24px}
+  .pin-card input{width:100%;font-size:1.15rem;letter-spacing:.3em;text-align:center;padding:13px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);margin-bottom:14px;font-family:var(--font)}
+  .pin-card input:focus{outline:0;border-color:var(--teal);box-shadow:0 0 0 4px rgba(0,184,169,.12)}
+  .pin-btn{width:100%;padding:14px;border:0;border-radius:12px;font-family:var(--font);font-weight:700;font-size:1rem;color:#fff;cursor:pointer;background:linear-gradient(135deg,var(--red),var(--blue));transition:.2s}
+  .pin-btn:hover{transform:translateY(-2px)}
+  .pin-err{color:var(--red);font-size:.85rem;font-weight:600;margin-top:12px;display:none}
+  .shake{animation:shake .4s}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+
+  /* ===== APP ===== */
+  #app{display:none;max-width:860px;margin:0 auto;padding:24px 20px 120px}
+  .topbar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:13px;background:rgba(244,246,250,.92);backdrop-filter:blur(10px);padding:14px 4px;border-bottom:1px solid var(--line);margin-bottom:20px}
+  .topbar img{width:42px;height:42px;border-radius:11px}
+  .topbar b{font-size:1.12rem;color:var(--navy)}
+  .topbar small{display:block;font-size:.72rem;color:var(--muted);font-weight:600;letter-spacing:.06em}
+  .topbar .spacer{flex:1}
+  .link-site{display:inline-flex;align-items:center;gap:7px;font-size:.86rem;font-weight:700;color:#0086A8;text-decoration:none;padding:9px 16px;border:1.5px solid rgba(0,169,206,.35);border-radius:999px;transition:.2s;background:#fff}
+  .link-site:hover{background:var(--blue);color:#fff}
+
+  .guide{background:linear-gradient(135deg,#E9FBF4,#EAF6FE);border:1.5px solid rgba(0,184,169,.35);border-radius:var(--radius);padding:22px 24px;margin-bottom:22px}
+  .guide h2{font-size:1.02rem;color:var(--navy);margin-bottom:12px}
+  .guide ol{margin-left:20px;font-size:.9rem}
+  .guide ol li{margin-bottom:6px}
+  .guide code{background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 8px;font-size:.82rem;color:var(--red);font-weight:700}
+  .warn{background:#FFF8E8;border:1.5px solid rgba(232,181,75,.5);border-radius:13px;padding:14px 18px;font-size:.85rem;margin-top:14px}
+  .warn b{color:#A5781B}
+
+  details{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
+  summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;padding:18px 22px;font-weight:800;font-size:1rem;color:var(--navy);user-select:none}
+  summary::-webkit-details-marker{display:none}
+  summary .arr{margin-left:auto;transition:.25s;color:var(--muted);font-weight:400}
+  details[open] summary .arr{transform:rotate(180deg)}
+  .sec-body{padding:4px 22px 22px;border-top:1px solid var(--line);margin-top:-1px}
+  .fld{margin-top:16px}
+  .fld label{display:block;font-size:.85rem;font-weight:700;margin-bottom:6px;color:var(--ink)}
+  .fld label .key{font-weight:600;color:var(--muted);font-size:.72rem;background:var(--bg);border-radius:6px;padding:2px 8px;margin-left:8px;border:1px solid var(--line)}
+  .fld input,.fld textarea{width:100%;font-family:var(--font);font-size:.92rem;padding:11px 14px;border:1.5px solid var(--line);border-radius:11px;background:var(--bg);color:var(--ink);transition:.2s}
+  .fld textarea{min-height:74px;resize:vertical}
+  .fld input:focus,.fld textarea:focus{outline:0;border-color:var(--teal);background:#fff;box-shadow:0 0 0 4px rgba(0,184,169,.12)}
+  .hint{font-size:.74rem;color:var(--muted);margin-top:5px}
+  .fld.changed input,.fld.changed textarea{border-color:var(--teal);background:#F0FDF9}
+
+  .savebar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:14px 20px;display:flex;gap:12px;justify-content:center;align-items:center;box-shadow:0 -8px 30px rgba(17,29,51,.08)}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font);font-weight:700;font-size:.95rem;padding:13px 26px;border-radius:999px;cursor:pointer;border:0;transition:.2s;text-decoration:none}
+  .btn-save{background:#25D366;color:#fff;box-shadow:0 8px 22px rgba(37,211,102,.35)}
+  .btn-save:hover{transform:translateY(-2px)}
+  .btn-grey{background:#fff;border:1.5px solid var(--line);color:var(--muted)}
+  .btn-grey:hover{border-color:var(--teal);color:var(--navy)}
+  .count{font-size:.82rem;color:var(--muted);font-weight:600}
+
+  .toast{position:fixed;bottom:86px;left:50%;transform:translateX(-50%) translateY(20px);background:#111D33;color:#fff;padding:14px 26px;border-radius:14px;font-size:.9rem;font-weight:600;opacity:0;pointer-events:none;transition:.35s;z-index:60;box-shadow:0 16px 40px rgba(0,0,0,.3);max-width:90%;text-align:center}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  @media(max-width:520px){.pin-card{padding:34px 26px}.btn{padding:12px 18px;font-size:.88rem}.count{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ===== PIN GATE ===== -->
+<div id="pinGate">
+  <div class="pin-card" id="pinCard">
+    <img src="neties-logo.jpg" alt="Logo">
+    <h1>🔐 Panel Admin</h1>
+    <p>Halaman khusus pemilik website.<br>Masukkan PIN untuk melanjutkan.</p>
+    <input type="password" id="pinInput" placeholder="••••••" maxlength="20" autocomplete="off">
+    <button class="pin-btn" onclick="cekPIN()">Masuk →</button>
+    <div class="pin-err" id="pinErr">PIN salah, coba lagi ya 🙏</div>
+  </div>
+</div>
+
+<!-- ===== APP ===== -->
+<div id="app">
+  <div class="topbar">
+    <img src="neties-logo.jpg" alt="Logo">
+    <div><b>Panel Admin</b><small>KELOLA ISI WEBSITE NETIES</small></div>
+    <div class="spacer"></div>
+    <a class="link-site" href="index.html" target="_blank">👁 Lihat Website ↗</a>
+  </div>
+
+  <div class="guide">
+    <h2>📌 Cara kerjanya (penting dibaca!)</h2>
+    <ol>
+      <li>Ubah teks apa pun di formulir bawah ini (semua kolom aman diedit).</li>
+      <li>Klik <b>💾 Simpan &amp; Download config.js</b> di bagian bawah.</li>
+      <li>Upload file <code>config.js</code> itu ke <b>GitHub</b> (repo <code>neties-web</code> → Add file → Upload files → Commit). File lama otomatis tertimpa.</li>
+      <li>Tunggu ±30 detik — website <code>neties-web.vercel.app</code> otomatis berubah! 🎉</li>
+    </ol>
+    <div class="warn">⚠️ <b>Awas jebakan (1) lagi:</b> sebelum download, hapus dulu file <code>config.js</code> lama di folder Downloads, supaya nama file hasil download tetap pas <code>config.js</code> — bukan <code>config (1).js</code>.<br>
+    📷 <b>Ganti foto / logo?</b> Upload file gambar baru ke GitHub dengan nama yang sama persis (<code>neties-web.jpg</code> untuk foto, <code>neties-logo.jpg</code> untuk logo) — otomatis tertimpa.</div>
+  </div>
+
+  <form id="formRoot" onsubmit="return false"></form>
+
+  <div class="savebar">
+    <span class="count" id="countChanged"></span>
+    <button class="btn btn-grey" onclick="location.reload()">↺ Batal / Muat Ulang</button>
+    <button class="btn btn-save" onclick="simpan()">💾 Simpan &amp; Download config.js</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="config.js"></script>
+<script>
+/* ================= PIN =================
+   Ganti PIN di bawah ini kalau mau (edit lewat GitHub):
+   mis. const PIN = "rahasia123";                       */
+const PIN = "neties2026";
+const CFG = window.CONFIG || {};
+
+function cekPIN(){
+  const v = document.getElementById("pinInput").value.trim();
+  if(v === PIN){
+    localStorage.setItem("neties_admin_ok","1");
+    masuk();
+  } else {
+    document.getElementById("pinErr").style.display = "block";
+    const c = document.getElementById("pinCard");
+    c.classList.remove("shake"); void c.offsetWidth; c.classList.add("shake");
+  }
+}
+document.getElementById("pinInput").addEventListener("keydown", e => { if(e.key==="Enter") cekPIN(); });
+function masuk(){
+  document.getElementById("pinGate").style.display = "none";
+  document.getElementById("app").style.display = "block";
+}
+if(localStorage.getItem("neties_admin_ok")==="1") masuk();
+function keluar(){ localStorage.removeItem("neties_admin_ok"); location.reload(); }
+
+/* ================= SKEMA FORM =================
+   k  = kunci di config.js
+   l  = label tampilan
+   ta = textarea (teks panjang)
+   h  = catatan bantuan kecil                     */
+const SCHEMA = [
+  { t:"👤 Identitas & Kontak", f:[
+    {k:"name", l:"Nama Anda"},
+    {k:"wa", l:"Nomor WhatsApp", h:"Format 62xxx tanpa + dan tanpa strip. Contoh: 6281315100690"},
+    {k:"area", l:"Area layanan"},
+    {k:"def_msg", l:"Pesan pembuka WhatsApp (otomatis terisi saat orang klik tombol WA)", ta:1},
+    {k:"email", l:"Email"},
+    {k:"ig", l:"Username Instagram (tanpa @)"},
+    {k:"fb_name", l:"Nama Facebook"},
+    {k:"fb_url", l:"Link profil Facebook", h:"Copy dari browser saat profil FB Anda terbuka, mis. https://www.facebook.com/netie.syamsibar"}
+  ]},
+  { t:"🎯 Hero (Halaman Depan)", f:[
+    {k:"hero_badge", l:"Teks badge kecil di atas judul"},
+    {k:"hero_lead", l:"Paragraf pembuka", ta:1, h:"Boleh pakai kode <b>tebal</b> dan <i>miring</i>"},
+    {k:"t1n", l:"Angka kepercayaan 1"},{k:"t1l", l:"Label kepercayaan 1"},
+    {k:"t2n", l:"Angka kepercayaan 2"},{k:"t2l", l:"Label kepercayaan 2"},
+    {k:"t3n", l:"Angka kepercayaan 3"},{k:"t3l", l:"Label kepercayaan 3"}
+  ]},
+  { t:"🛡️ Dua Layanan Utama", f:[
+    {k:"red_desc", l:"Deskripsi kartu Prudential", ta:1},
+    {k:"red_li1", l:"Prudential — poin 1"},{k:"red_li2", l:"Prudential — poin 2"},{k:"red_li3", l:"Prudential — poin 3"},
+    {k:"blue_desc", l:"Deskripsi kartu COWAY", ta:1},
+    {k:"blue_li1", l:"COWAY — poin 1"},{k:"blue_li2", l:"COWAY — poin 2"},{k:"blue_li3", l:"COWAY — poin 3"}
+  ]},
+  { t:"🙋 Tentang Saya", f:[
+    {k:"about_p1", l:"Paragraf 1", ta:1, h:"Boleh pakai <b> dan <i>"},
+    {k:"about_p2", l:"Paragraf 2", ta:1},
+    {k:"chk1", l:"Keunggulan 1"},{k:"chk2", l:"Keunggulan 2"},
+    {k:"chk3", l:"Keunggulan 3"},{k:"chk4", l:"Keunggulan 4"}
+  ]},
+  { t:"❤️ Produk Prudential", f:[
+    {k:"p1_desc", l:"Kartu 1 (Kesehatan) — deskripsi", ta:1},{k:"p1_tag", l:"Kartu 1 — label"},
+    {k:"p2_desc", l:"Kartu 2 (Jiwa & Unit Link) — deskripsi", ta:1},{k:"p2_tag", l:"Kartu 2 — label"},
+    {k:"p3_desc", l:"Kartu 3 (Penyakit Kritis) — deskripsi", ta:1},{k:"p3_tag", l:"Kartu 3 — label"},
+    {k:"p4_desc", l:"Kartu 4 (Syariah & Warisan) — deskripsi", ta:1},{k:"p4_tag", l:"Kartu 4 — label"},
+    {k:"pru_note", l:"Catatan disclaimer bawah section Prudential", ta:1}
+  ]},
+  { t:"💧 Produk COWAY", f:[
+    {k:"c1_desc", l:"Penyaring Air — deskripsi", ta:1},{k:"c1_tag", l:"Penyaring Air — label"},
+    {k:"c2_desc", l:"Penyaring Udara — deskripsi", ta:1},{k:"c2_tag", l:"Penyaring Udara — label"},
+    {k:"c3_desc", l:"Bidet — deskripsi", ta:1},{k:"c3_tag", l:"Bidet — label"},
+    {k:"c4_desc", l:"Kasur — deskripsi", ta:1},{k:"c4_tag", l:"Kasur — label"},
+    {k:"cow_note", l:"Catatan harga bawah section COWAY", ta:1}
+  ]},
+  { t:"✨ Keunggulan COWAY", f:[
+    {k:"perk1b", l:"Keunggulan 1 — judul"},{k:"perk1s", l:"Keunggulan 1 — isi"},
+    {k:"perk2b", l:"Keunggulan 2 — judul"},{k:"perk2s", l:"Keunggulan 2 — isi"},
+    {k:"perk3b", l:"Keunggulan 3 — judul"},{k:"perk3s", l:"Keunggulan 3 — isi"},
+    {k:"perk4b", l:"Keunggulan 4 — judul"},{k:"perk4s", l:"Keunggulan 4 — isi"}
+  ]},
+  { t:"🪜 Cara Mulai (4 Langkah)", f:[
+    {k:"step1", l:"Langkah 1 — isi", ta:1},{k:"step2", l:"Langkah 2 — isi", ta:1},
+    {k:"step3", l:"Langkah 3 — isi", ta:1},{k:"step4", l:"Langkah 4 — isi", ta:1}
+  ]},
+  { t:"💬 Testimoni", f:[
+    {k:"testi1p", l:"Testimoni 1 — isi", ta:1},{k:"testi1n", l:"Testimoni 1 — nama"},{k:"testi1r", l:"Testimoni 1 — keterangan"},
+    {k:"testi2p", l:"Testimoni 2 — isi", ta:1},{k:"testi2n", l:"Testimoni 2 — nama"},{k:"testi2r", l:"Testimoni 2 — keterangan"},
+    {k:"testi3p", l:"Testimoni 3 — isi", ta:1},{k:"testi3n", l:"Testimoni 3 — nama"},{k:"testi3r", l:"Testimoni 3 — keterangan"}
+  ]},
+  { t:"❓ FAQ (Tanya Jawab)", f:[
+    {k:"faq1q", l:"Pertanyaan 1"},{k:"faq1a", l:"Jawaban 1", ta:1},
+    {k:"faq2q", l:"Pertanyaan 2"},{k:"faq2a", l:"Jawaban 2", ta:1},
+    {k:"faq3q", l:"Pertanyaan 3"},{k:"faq3a", l:"Jawaban 3", ta:1},
+    {k:"faq4q", l:"Pertanyaan 4"},{k:"faq4a", l:"Jawaban 4", ta:1},
+    {k:"faq5q", l:"Pertanyaan 5"},{k:"faq5a", l:"Jawaban 5", ta:1}
+  ]},
+  { t:"🕐 Lain-lain", f:[
+    {k:"hours", l:"Jam layanan", ta:1, h:"Tulis <br> untuk pindah baris"},
+    {k:"disclaimer", l:"Disclaimer di footer", ta:1}
+  ]}
+];
+
+/* ================= RENDER FORM ================= */
+const root = document.getElementById("formRoot");
+const changed = new Set();
+let secNo = 0;
+SCHEMA.forEach(sec => {
+  secNo++;
+  const d = document.createElement("details");
+  if(secNo <= 2) d.open = true;
+  let html = '<summary><span style="font-size:1.15rem">'+ sec.t +'</span><span class="arr">▾</span></summary><div class="sec-body">';
+  sec.f.forEach(f => {
+    html += '<div class="fld"><label>'+ f.l +'<span class="key">'+ f.k +'</span></label>';
+    const val = (CFG[f.k] !== undefined ? CFG[f.k] : "");
+    if(f.ta) html += '<textarea name="'+ f.k +'">'+ escapeHtml(val) +'</textarea>';
+    else     html += '<input type="text" name="'+ f.k +'" value="'+ escapeAttr(val) +'">';
+    if(f.h)  html += '<div class="hint">💡 '+ f.h +'</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+  d.innerHTML = html;
+  root.appendChild(d);
+});
+
+function escapeHtml(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+function escapeAttr(s){ return escapeHtml(s).replace(/"/g,"&quot;"); }
+
+root.addEventListener("input", e => {
+  const wrap = e.target.closest(".fld");
+  if(wrap) wrap.classList.add("changed");
+  changed.add(e.target.name);
+  document.getElementById("countChanged").textContent = changed.size + " kolom diubah";
+});
+
+/* ================= SIMPAN ================= */
+function simpan(){
+  const out = {};
+  SCHEMA.forEach(sec => sec.f.forEach(f => {
+    const el = root.querySelector('[name="'+f.k+'"]');
+    if(el) out[f.k] = el.value;
+  }));
+  let js = "/* ============================================================\n";
+  js += "   PENGATURAN WEBSITE NETIES\n";
+  js += "   Diperbarui via Panel Admin: " + new Date().toLocaleString("id-ID") + "\n";
+  js += "   ============================================================ */\n";
+  js += "const CONFIG = " + JSON.stringify(out, null, 2) + ";\n";
+
+  const blob = new Blob([js], {type:"text/javascript;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "config.js";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  toast("✅ config.js terdownload! Sekarang upload ke GitHub (Add file → Upload files → Commit). Website berubah ±30 detik. 🚀");
+}
+function toast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(()=>t.classList.remove("show"), 7000);
+}
+</script>
+</body>
+</html>
