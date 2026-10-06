@@ -1,6 +1,6 @@
 /* ============================================================
    PENGATURAN WEBSITE NETIES
-   Diperbarui via Panel Admin: 6/10/2026, 20.18.28
+   Diperbarui via Panel Admin: 6/10/2026, 20.35.46
    ============================================================ */
 const CONFIG = {
   "name": "",
@@ -8,8 +8,8 @@ const CONFIG = {
   "area": "",
   "def_msg": "",
   "email": "",
-  "ig": " https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=5csf1m",
-  "fb_name": "",
+  "ig": "",
+  "fb_name": "https://www.facebook.com/share/14vdtJhvYUV/",
   "fb_url": "",
   "hero_badge": "",
   "hero_lead": "",
